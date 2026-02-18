@@ -53,7 +53,6 @@ class VoiclyAvatar extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: isOnline ? AppColors.success : Colors.grey,
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 2),
                   ),
                 ),
               ),

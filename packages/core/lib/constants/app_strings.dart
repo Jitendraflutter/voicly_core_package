@@ -1,5 +1,6 @@
 class AppStrings {
-  static const String appName = "Voicly";
+  static const String voicly = "Voicly";
+  static const String voiclyCaller = "Voicly Caller";
   static const String welcomeMessage = "Someone waiting for you!";
   static const String description = "Someone waiting for you!";
   static const String tagline = "Because Every Voice Has a Story!";

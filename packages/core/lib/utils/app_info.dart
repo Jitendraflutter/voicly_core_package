@@ -19,7 +19,7 @@ class AppInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "${AppStrings.appName} ${AppStrings.appVersion}",
+              "${AppStrings.voiclyCaller} ${AppStrings.appVersion}",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: AppColors.darkGrey,

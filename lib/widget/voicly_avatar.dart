@@ -25,6 +25,7 @@ class VoiclyAvatar extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
+        radius: radius + borderWidth,
         child: Stack(
           clipBehavior: Clip.none,
           children: [

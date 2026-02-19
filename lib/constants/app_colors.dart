@@ -75,18 +75,60 @@ class AppColors {
     ],
   );
 
-  /// A softer, vertical version for backgrounds or cards
   static const LinearGradient vibrantSunsetColor = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [Color(0xFF9F42F0), Color(0xFFE83377)],
   );
-}
 
-// boxShadow: [
-// BoxShadow(
-// color: const Color(0xFFE91EAF).withOpacity(0.3),
-// blurRadius: 20,
-// offset: const Offset(0, 10),
-// ),
-// ],
+  // ================== 🌌 DARK APP BACKGROUND COLORS ==================
+
+  /// Deep background purple (top)
+  static const Color bgDarkPurple = Color(0xFF0B0220);
+
+  /// Mid dark purple
+  static const Color bgPurpleMid = Color(0xFF14052E);
+
+  /// Glow purple (radial light)
+  static const Color bgPurpleGlow = Color(0xFF1B063A);
+
+  /// Dark grey layer
+  static const Color bgDarkGrey = Color(0xFF0B0C12);
+
+  // NOTE: pure black already exists → reuse AppColors.dark
+
+  // ================== 🌌 MAIN SCREEN BACKGROUND GRADIENT ==================
+
+  static const LinearGradient mainScreenBackground = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      bgDarkPurple,
+      bgPurpleMid,
+      AppColors.dark, // reuse
+      bgDarkGrey,
+      AppColors.dark, // reuse
+    ],
+    stops: [0.0, 0.3, 0.5, 0.8, 1.0],
+  );
+
+  // ================== 🌌 RADIAL GLOW TOP LEFT ==================
+
+  static const RadialGradient topLeftGlow = RadialGradient(
+    center: Alignment(-0.85, -0.95),
+    radius: 0.9,
+    colors: [bgPurpleGlow, bgPurpleMid, Colors.transparent],
+    stops: [0.0, 0.35, 1.0],
+  );
+
+  // ================== 🌌 RADIAL GLOW TOP RIGHT ==================
+
+  static const RadialGradient topRightGlow = RadialGradient(
+    center: Alignment(0.7, -0.9),
+    radius: 0.8,
+    colors: [bgPurpleGlow, Colors.transparent],
+    stops: [0.0, 1.0],
+  );
+
+
+}

@@ -2,7 +2,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Helpers {
   static String ageFormatter(String? date) {
-    if (date == null || date.isEmpty) return "";
+    if (date == null ||
+        date.isEmpty ||
+        date == "0" ||
+        date.toLowerCase() == "null") {
+      return "NA";
+    }
 
     try {
       final dob = DateTime.parse(date);
@@ -15,11 +20,11 @@ class Helpers {
         years--;
       }
 
-      if (years < 0) return "";
+      if (years <= 0) return "NA";
 
       return "$years Y";
     } catch (e) {
-      return "";
+      return "NA";
     }
   }
 

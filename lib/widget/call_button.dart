@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class CallButton extends StatelessWidget {
   final IconData icon;
   final Color color;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   const CallButton({
     super.key,
     required this.icon,
     required this.color,
-    required this.onTap,
+     this.onTap,
   });
 
   @override
@@ -18,7 +18,7 @@ class CallButton extends StatelessWidget {
       color: Colors.transparent,
       child: CupertinoButton(
         padding: EdgeInsets.zero,
-        onPressed: onTap,
+        onPressed: onTap ?? null,
         child: Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(

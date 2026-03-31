@@ -1,6 +1,7 @@
 import 'package:core/constants/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // 🟢 Added import
 
 class AppButton extends StatelessWidget {
   final String text;
@@ -20,28 +21,25 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Material(
+    return Material(
       color: Colors.transparent,
       child: CupertinoButton(
         onPressed: onPressed,
         padding: EdgeInsets.zero,
         child: Container(
           width: width ?? double.infinity,
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          padding: EdgeInsets.symmetric(
+            vertical: 15.h, // 🟢 Scaled
+            horizontal: 20.w, // 🟢 Scaled
+          ),
           decoration: BoxDecoration(
-            // gradient: LinearGradient(
-            //   colors: [
-            //     AppColors.primaryPeachShade,
-            //     AppColors.primaryPeach,
-            //   ],
-            // ),
             gradient: AppColors.primaryButtonGradient,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r), // 🟢 Scaled
             boxShadow: [
               BoxShadow(
                 color: AppColors.primaryPurple.withOpacity(0.3),
-                blurRadius: 15,
-                offset: const Offset(0, 8),
+                blurRadius: 15.r, // 🟢 Scaled
+                offset: Offset(0, 8.h), // 🟢 Scaled
               ),
             ],
           ),
@@ -49,9 +47,9 @@ class AppButton extends StatelessWidget {
             child: icon == null
                 ? Text(
                     text,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 18.sp, // 🟢 Scaled
                       fontWeight: FontWeight.normal,
                     ),
                   )
@@ -62,22 +60,30 @@ class AppButton extends StatelessWidget {
                         ? [
                             Text(
                               text,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 18.sp, // 🟢 Scaled
                               ),
                             ),
-                            const SizedBox(width: 8),
-                            Icon(icon, color: Colors.white, size: 20),
+                            SizedBox(width: 8.w), // 🟢 Scaled
+                            Icon(
+                              icon,
+                              color: Colors.white,
+                              size: 20.sp,
+                            ), // 🟢 Scaled
                           ]
                         : [
-                            Icon(icon, color: Colors.white, size: 20),
-                            const SizedBox(width: 8),
+                            Icon(
+                              icon,
+                              color: Colors.white,
+                              size: 20.sp,
+                            ), // 🟢 Scaled
+                            SizedBox(width: 8.w), // 🟢 Scaled
                             Text(
                               text,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 18.sp, // 🟢 Scaled
                               ),
                             ),
                           ],

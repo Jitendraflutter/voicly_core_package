@@ -1,5 +1,6 @@
 import 'package:core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WidgetWrapper extends StatelessWidget {
   final Widget child;
@@ -9,9 +10,9 @@ class WidgetWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(22),
-        topRight: Radius.circular(22),
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(22.r),
+        topRight: Radius.circular(22.r),
       ),
       child: Stack(
         children: [
@@ -22,15 +23,11 @@ class WidgetWrapper extends StatelessWidget {
           ),
 
           Container(
-            decoration: const BoxDecoration(
-              gradient: AppColors.topLeftGlow,
-            ),
+            decoration: const BoxDecoration(gradient: AppColors.topLeftGlow),
           ),
 
           Container(
-            decoration: const BoxDecoration(
-              gradient: AppColors.topRightGlow,
-            ),
+            decoration: const BoxDecoration(gradient: AppColors.topRightGlow),
           ),
 
           child,
